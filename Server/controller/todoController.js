@@ -27,7 +27,7 @@ const updateTodo = async (req, res) => {
     
     try {
         if (!mongoose.Types.ObjectId.isValid(id)) {
-            return res.status(400).send("inavalid id format");
+            return res.status(400).send("invalid id format");
         }
         const update = { completed }
         const updatedTodo = await TODO.findByIdAndUpdate(id, update, { new: true });
